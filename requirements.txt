@@ -1,5 +1,4 @@
 scikit-learn
-opencv
 numpy
 keras
 tensorflow
