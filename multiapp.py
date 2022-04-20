@@ -1,9 +1,11 @@
-"""Frameworks for running multiple Streamlit applications as a single app.
-"""
+"""Frameworks for running multiple Streamlit applications as a single app."""
+# https://icons.getbootstrap.com/
 import streamlit as st
+from streamlit_option_menu import option_menu
 
 class MultiApp:
-    """Framework for combining multiple streamlit applications.
+    """
+    Framework for combining multiple streamlit applications.
     Usage:
         def foo():
             st.title("Hello Foo")
@@ -39,10 +41,20 @@ class MultiApp:
         })
 
     def run(self):
-        # app = st.sidebar.radio(
-        app = st.selectbox(
-            'Navigation',
-            self.apps,
-            format_func=lambda app: app['title'])
+        selected = option_menu(
+            menu_title=None,  # required
+            options=['Home', 'Data', 'Model'],  # required
+            icons=["house-fill", "bar-chart-line-fill", "diagram-3-fill"],  # optional
+            menu_icon="cast",  # optional
+            default_index=0,  # optional
+            orientation="horizontal",
+        )
+        for i in self.apps:
+            if i['title'] == selected:
+                app = i
+        # app = st.selectbox(
+        #     'Navigation',
+        #     self.apps,
+        #     format_func=lambda app: app['title'])
 
         app['function']()
