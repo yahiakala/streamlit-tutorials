@@ -53,7 +53,7 @@ if uploaded_file:
     fixed_image = ImageOps.exif_transpose(image)
     st.image(fixed_image, width=500)
     # st.write(uploaded_file)
-    label = detect_smile(cascade, model, uploaded_file)
+    label = detect_smile(cascade, model, fixed_image)
     st.write(label)
 
 # Button to train model and then display output

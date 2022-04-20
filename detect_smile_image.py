@@ -8,15 +8,27 @@ import argparse
 import cv2
 
 def detect_smile(cascade, model, picture):
-    """Detect a smile in an image."""
+    """
+    Detect a smile in an image.
+    
+    Inputs
+    ------
+    cascade : str
+    model : str
+    picture: PIL image object
+    
+    """
     # load the face detector cascade and smile detector CNN
     detector = cv2.CascadeClassifier(cascade)
     model = load_model(model)
-    try:
-        frame = cv2.imread(picture)
-    except:
-        # For streamlit
-        frame = np.array(Image.open(picture))
+    frame = np.array(picture)
+    # try:
+    #     frame = cv2.imread(picture)
+    # except:
+    #     # For streamlit
+    #     image = Image.open(picture)
+    #     fixed_image = ImageOps.exif_transpose(image)  # 
+    #     frame = np.array(fixed_image)
 
     # resize the fram, convert it to grayscale, and then clone the
     # orgignal frame so we draw on it later in the program
