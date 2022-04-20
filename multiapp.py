@@ -1,4 +1,4 @@
-"""Frameworks for running multiple Streamlit applications as a single app."""
+"""Framework for running multiple Streamlit applications as a single app."""
 # https://icons.getbootstrap.com/
 import streamlit as st
 from streamlit_option_menu import option_menu
@@ -26,7 +26,7 @@ class MultiApp:
     def __init__(self):
         self.apps = []
 
-    def add_app(self, title, func):
+    def add_app(self, title, func, icon_bootstrap):
         """Adds a new application.
         Parameters
         ----------
@@ -37,14 +37,16 @@ class MultiApp:
         """
         self.apps.append({
             "title": title,
-            "function": func
+            "function": func,
+            "icon": icon_bootstrap
         })
 
     def run(self):
+        # Manually control the icons
         selected = option_menu(
             menu_title=None,  # required
-            options=['Home', 'Data', 'Model'],  # required
-            icons=["house-fill", "bar-chart-line-fill", "diagram-3-fill"],  # optional
+            options=[i['title'] for i in self.apps],  # required
+            icons=[i['icon'] for i in self.apps],  # optional
             menu_icon="cast",  # optional
             default_index=0,  # optional
             orientation="horizontal",
