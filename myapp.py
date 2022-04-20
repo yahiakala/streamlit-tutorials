@@ -34,14 +34,15 @@ I'm so glad you're here!
 # - photo gets displayed
 # - steps to process the photo are shown.
 
+# UploadedFile class object.
 uploaded_file = st.file_uploader("Upload your profile picture.",
                                  type=['jpg', 'png', 'jpeg'])
 
 if uploaded_file:
     image = Image.open(uploaded_file)
-    print(uploaded_file)
     st.image(image, width=500)
-    label = detect_smile(cascade, model, pic_backup)
+    # st.write(uploaded_file)
+    label = detect_smile(cascade, model, uploaded_file)
     st.write(label)
 
 # Button to train model and then display output

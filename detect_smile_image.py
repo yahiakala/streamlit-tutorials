@@ -1,6 +1,7 @@
 # import the necessary packages
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
+from PIL import Image
 import numpy as np
 import imutils
 import argparse
@@ -11,7 +12,11 @@ def detect_smile(cascade, model, picture):
     # load the face detector cascade and smile detector CNN
     detector = cv2.CascadeClassifier(cascade)
     model = load_model(model)
-    frame = cv2.imread(picture)
+    try:
+        frame = cv2.imread(picture)
+    except:
+        # For streamlit
+        frame = np.array(Image.open(picture))
 
     # resize the fram, convert it to grayscale, and then clone the
     # orgignal frame so we draw on it later in the program
