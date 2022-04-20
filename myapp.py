@@ -15,7 +15,7 @@ model = './model2.h5'
 pic_backup = './sample_photos/mai_smile.jpg'
 
 st.write("""
-# Simple App
+# Smile Detector App
 
 Hey there! Welcome to the app!
 
