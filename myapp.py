@@ -31,3 +31,5 @@ uploaded_file = st.file_uploader("Upload your profile picture.",
 if uploaded_file:
     image = Image.open(uploaded_file)
     st.image(image, width=500)
+
+# Button to train model and then display output

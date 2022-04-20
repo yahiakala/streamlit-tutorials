@@ -14,12 +14,15 @@ import cv2
 import os
 
 # construct the argument parser and parse tha arguments
-ap = argparse.ArgumentParser()
-ap.add_argument('-d', '--dataset', required=True, 
-    help='path to the input dataset of faces')
-ap.add_argument('-m', '--model', required=True, 
-    help='path to output model')
-args = vars(ap.parse_args())
+# ap = argparse.ArgumentParser()
+# ap.add_argument('-d', '--dataset', required=True, 
+#     help='path to the input dataset of faces')
+# ap.add_argument('-m', '--model', required=True, 
+#     help='path to output model')
+# args = vars(ap.parse_args())
+
+args['dataset'] = './SMILEs'
+args['model'] = './model2.h5'
 
 # initialize the list of data and labels
 data = []
