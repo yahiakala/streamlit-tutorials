@@ -1,5 +1,14 @@
 import streamlit as st
 from PIL import Image
+from detect_smile_image import detect_smile
+import cv2
+import keras.backend.tensorflow_backend as tb
+tb._SYMBOLIC_SCOPE.value = True
+
+
+cascade = 'haarcascade_frontalface_default.xml'
+model = './model2.h5'
+pic_backup = './sample_photos/mai_smile.jpg'
 
 st.write("""
 # Simple App
@@ -26,10 +35,13 @@ I'm so glad you're here!
 # - steps to process the photo are shown.
 
 uploaded_file = st.file_uploader("Upload your profile picture.",
-                                 type=['jpg', 'png'])
+                                 type=['jpg', 'png', 'jpeg'])
 
 if uploaded_file:
     image = Image.open(uploaded_file)
+    print(uploaded_file)
     st.image(image, width=500)
+    label = detect_smile(cascade, model, pic_backup)
+    st.write(label)
 
 # Button to train model and then display output

@@ -4,7 +4,6 @@ channels:
 dependencies:
   - scikit-learn
   - opencv
-  - imutils
   - numpy
   - keras
   - tensorflow
@@ -13,4 +12,9 @@ dependencies:
   - ipykernel
   - jupyterlab
   - h5py=2.10.0
+  - pip
+  - pip:
+    - imutils
+    - streamlit
+    - opencv-python
 prefix: C:\Users\Yahia.Kala\Anaconda3\envs\stream1

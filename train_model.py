@@ -22,7 +22,7 @@ import os
 # args = vars(ap.parse_args())
 
 args['dataset'] = './SMILEs'
-args['model'] = './model2.h5'
+args['model'] = './model2_mac.h5'
 
 # initialize the list of data and labels
 data = []
