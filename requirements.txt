@@ -3,8 +3,6 @@ numpy
 keras
 tensorflow
 matplotlib
-ipykernel
-jupyterlab
 h5py==2.10.0
 pip
 imutils
