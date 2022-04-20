@@ -4,7 +4,6 @@ keras
 tensorflow
 matplotlib
 h5py==2.10.0
-pip
 imutils
 streamlit
 opencv-python
