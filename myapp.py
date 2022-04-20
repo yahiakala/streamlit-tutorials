@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageOps
 from detect_smile_image import detect_smile
 import cv2
 
@@ -50,7 +50,8 @@ uploaded_file = st.file_uploader("Upload your profile picture.",
 
 if uploaded_file:
     image = Image.open(uploaded_file)
-    st.image(image, width=500)
+    fixed_image = ImageOps.exif_transpose(image)
+    st.image(fixed_image, width=500)
     # st.write(uploaded_file)
     label = detect_smile(cascade, model, uploaded_file)
     st.write(label)
