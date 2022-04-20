@@ -9,4 +9,5 @@
 - Smile Detector Repo: https://github.com/balajisrinivas/Smile-Detector-using-Python
 - Dataset: https://github.com/hromi/SMILEsmileD
 - Multi page app: https://github.com/dataprofessor/multi-page-app
+- Multi page app framework: https://github.com/upraneelnihar/streamlit-multiapps
 - 
