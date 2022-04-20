@@ -2,8 +2,12 @@ import streamlit as st
 from PIL import Image
 from detect_smile_image import detect_smile
 import cv2
-import keras.backend.tensorflow_backend as tb
-tb._SYMBOLIC_SCOPE.value = True
+
+try:
+    import keras.backend.tensorflow_backend as tb
+    tb._SYMBOLIC_SCOPE.value = True
+except ModuleNotFoundError:
+    pass
 
 
 cascade = 'haarcascade_frontalface_default.xml'
