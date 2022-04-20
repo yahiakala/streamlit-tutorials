@@ -38,6 +38,12 @@ I'm so glad you're here!
 # - photo gets displayed
 # - steps to process the photo are shown.
 
+# Page: Detailed model output
+# Look at each step.
+# Show some examples of smiles, some examples of non smiles
+
+# Page: upload data to a db?
+
 # UploadedFile class object.
 uploaded_file = st.file_uploader("Upload your profile picture.",
                                  type=['jpg', 'png', 'jpeg'])
