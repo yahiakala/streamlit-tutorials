@@ -1,8 +1,12 @@
 # streamlit-tutorials
  Streamlit tutorials for machine learning and analytics
+ 
+ ## App 1
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/yahiakala/streamlit-tutorials/main/myapp.py)
 
+## App 2
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/yahiakala/streamlit-tutorials/main/myapp2.py)
 
 ## Credits
 - Smile Detector Tutorial: https://www.youtube.com/watch?v=jl47mE8aQmc&t=112s
