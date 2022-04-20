@@ -1,0 +1,20 @@
+name: stream2
+channels:
+  - defaults
+dependencies:
+  - scikit-learn
+  - opencv
+  - numpy
+  - keras
+  - tensorflow
+  - python
+  - matplotlib
+  - ipykernel
+  - jupyterlab
+  - h5py=2.10.0
+  - pip
+  - pip:
+    - imutils
+    - streamlit
+    - opencv-python
+prefix: C:\Users\Yahia.Kala\Anaconda3\envs\stream1
