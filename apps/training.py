@@ -28,7 +28,7 @@ import io
 def app():
     st.title('Training the Model')
     if st.button('Train Model'):
-        with st.spinner('This could take about 5 minutes'):
+        with st.spinner('This could take about 5 minutes locally, 1 minute on the web'):
             training_model()
         st.balloons()
 
