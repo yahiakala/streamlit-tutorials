@@ -1,6 +1,9 @@
 # import the necessary packages
 from keras.models import Sequential
-from keras.layers.normalization import BatchNormalization
+try:
+    from keras.layers.normalization import BatchNormalization
+except ImportError:
+    from tensorflow.keras.layers import BatchNormalization
 from keras.layers.convolutional import Conv2D
 from keras.layers.convolutional import MaxPooling2D
 from keras.layers.core import Activation, Flatten, Dropout, Dense
