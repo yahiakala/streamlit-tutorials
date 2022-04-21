@@ -30,6 +30,7 @@ def app():
         image = Image.open(uploaded_file)
         fixed_image = ImageOps.exif_transpose(image)
         st.image(fixed_image)
-        # st.write(uploaded_file)
         label = detect_smile(cascade, model, fixed_image)
         st.write(label)
+        
+

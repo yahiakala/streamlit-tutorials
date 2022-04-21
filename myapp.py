@@ -28,10 +28,7 @@ I'm so glad you're here!
 # Put your code in a github repo (include refs in readme)
 
 # Markdown cheatsheet
-# Page 1: Training the model
-# - show the training data
-# - show the testing data
-# - show the model performance
+
 
 # Page 2: Using the model
 # - upload a photo

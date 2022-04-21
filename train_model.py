@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from keras.preprocessing.image import img_to_array
 from keras.utils import np_utils
-from lenet.nn.conv import LeNet
+from lenet.nn.conv import LeNet  # local file
 from imutils import paths
 import imutils
 import matplotlib.pyplot as plt
@@ -22,7 +22,7 @@ import os
 # args = vars(ap.parse_args())
 
 args['dataset'] = './SMILEs'
-args['model'] = './model2_mac.h5'
+args['model'] = './model3.h5'
 
 # initialize the list of data and labels
 data = []
@@ -37,8 +37,8 @@ for imagePath in sorted(list(paths.list_images(args['dataset']))):
     image = img_to_array(image)
     data.append(image)
 
-    # extravt the class label from the image path and update the labels list
-    label = imagePath.split(os.path.sep)[-3] # C:\Users\Balaji\Documents\Smile-Detector\SMILEs\positives\positives7\3.jpg
+    # extract the class label from the image path and update the labels list
+    label = imagePath.split(os.path.sep)[-3]
     label = 'smiling' if label == 'positives' else 'not_smiling'
     labels.append(label)
 
@@ -60,7 +60,10 @@ for i in range(0, len(classTotals)):
 
 # partition the data into training and testing sploits using 80% of
 # the data for training and the remaining 20% for testing
-(trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.20, stratify=labels, random_state=42)
+(trainX, testX, trainY, testY) = train_test_split(data, labels,
+                                                  test_size=0.20,
+                                                  stratify=labels,
+                                                  random_state=42)
 
 # initialize the model
 print('[INFO] compiling model...')
@@ -69,12 +72,15 @@ model.compile(loss=['binary_crossentropy'], optimizer='adam', metrics=['accuracy
 
 # train the network
 print('[INFO] training network...')
-H = model.fit(trainX, trainY, validation_data=(testX, testY), class_weight=classWeight, batch_size=64, epochs=15, verbose=1)
+H = model.fit(trainX, trainY, validation_data=(testX, testY),
+              class_weight=classWeight, batch_size=64, epochs=15, verbose=1)
 
 # evaluate the network
 print('[INFO] evaluating network...')
 predictions = model.predict(testX, batch_size=64)
-print(classification_report(testY.argmax(axis=1), predictions.argmax(axis=1), target_names=le.classes_))
+print(classification_report(testY.argmax(axis=1),
+                            predictions.argmax(axis=1),
+                            target_names=le.classes_))
 
 # save the model to disk
 print('[INFO] serializing network')

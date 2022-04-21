@@ -43,7 +43,7 @@ def detect_smile(cascade, model, picture):
         roi = cv2.resize(roi, (28, 28))
         roi = roi.astype('float') / 255.0
         roi = img_to_array(roi)
-        roi = np.expand_dims(roi, axis=0)
+        roi = np.expand_dims(roi, axis=0)  # add a dummy dimension
         (notSmiling, Smiling) = model.predict(roi)[0]
         label = 'Smiling' if Smiling > notSmiling else "Not Smiling"
     labellist.append(label)
