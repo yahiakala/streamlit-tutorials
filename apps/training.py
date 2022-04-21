@@ -99,14 +99,14 @@ def training_model():
     print('[INFO] serializing network')
     model.save(args['model'])
 
-    fig, ax = plt.figure()
+    fig, ax = plt.subplots()
     
     ax.plot(np.arange(0, 15), H.history['loss'], label='train_loss')
     ax.plot(np.arange(0, 15), H.history['val_loss'], label='val_loss')
     ax.plot(np.arange(0, 15), H.history['accuracy'], label='accuracy')
     ax.plot(np.arange(0, 15), H.history['val_accuracy'], label='val_accuracy')
-    fig.title('Training Loss and Accuracy')
-    ax.xlabel('Epoch #')
-    ax.ylabel('Loss/Accuracy')
+    ax.set_title('Training Loss and Accuracy')
+    ax.set_xlabel('Epoch #')
+    ax.set_ylabel('Loss/Accuracy')
     ax.legend()
     st.write(fig)
