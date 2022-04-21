@@ -21,6 +21,6 @@ st.write("""
 app.add_app("Home", home.app, 'house-fill')
 app.add_app("Data", data.app, 'bar-chart-line-fill')
 app.add_app("Training", training.app, 'clock-fill')
-app.add_app("Model", model.app, 'diagram-3-fill')
+# app.add_app("Model", model.app, 'diagram-3-fill')
 
 app.run()
