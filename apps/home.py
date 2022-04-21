@@ -28,7 +28,7 @@ def app():
 
     if uploaded_file:
         image = Image.open(uploaded_file)
-        fixed_image = ImageOps.exif_transpose(image)
+        fixed_image = ImageOps.exif_transpose(image)  # For mobile
         st.image(fixed_image)
         label = detect_smile(cascade, model, fixed_image)
         st.write(label)

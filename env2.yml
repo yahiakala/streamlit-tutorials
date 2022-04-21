@@ -1,10 +1,11 @@
-name: stream1
+name: stream2
 channels:
   - defaults
 dependencies:
   - scikit-learn
   - opencv
   - numpy
+  - pandas
   - keras
   - tensorflow
   - python
